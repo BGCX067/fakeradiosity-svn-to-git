@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+   <asset>
+      <contributor>
+         <authoring_tool>Google SketchUp 7.0.10247</authoring_tool>
+      </contributor>
+      <created>2009-08-15T14:27:28Z</created>
+      <modified>2009-08-15T14:27:28Z</modified>
+      <unit name="meters" meter="1.0"/>
+      <up_axis>Z_UP</up_axis>
+   </asset>
+   <library_materials>
+      <material id="material_0_0ID" name="material_0_0">
+         <instance_effect url="#material_0_0-effect"/>
+      </material>
+   </library_materials>
+   <library_effects>
+      <effect id="material_0_0-effect" name="material_0_0-effect">
+         <profile_COMMON>
+            <technique sid="COMMON">
+               <lambert>
+                  <emission>
+                     <color>0.000000 0.000000 0.000000 1</color>
+                  </emission>
+                  <ambient>
+                     <color>0.000000 0.000000 0.000000 1</color>
+                  </ambient>
+                  <diffuse>
+                     <color>0.000000 0.000000 0.000000 1</color>
+                  </diffuse>
+                  <transparent>
+                     <color>1 1 1 1</color>
+                  </transparent>
+                  <transparency>
+                     <float>0.000000</float>
+                  </transparency>
+               </lambert>
+            </technique>
+            <extra>
+               <technique profile="GOOGLEEARTH">
+                  <double_sided>1</double_sided>
+               </technique>
+            </extra>
+         </profile_COMMON>
+      </effect>
+   </library_effects>
+   <library_geometries>
+      <geometry id="mesh1-geometry" name="mesh1-geometry">
+         <mesh>
+            <source id="mesh1-geometry-position">
+               <float_array id="mesh1-geometry-position-array" count="15">-175.560102 -7.224186 0.000000 138.226248 -69.774389 0.000000 149.688015 -69.774389 91.948374 116.966678 -204.898980 91.948374 116.966678 -230.569272 59.467671 </float_array>
+               <technique_common>
+                  <accessor source="#mesh1-geometry-position-array" count="5" stride="3">
+                     <param name="X" type="float"/>
+                     <param name="Y" type="float"/>
+                     <param name="Z" type="float"/>
+                  </accessor>
+               </technique_common>
+            </source>
+            <vertices id="mesh1-geometry-vertex">
+               <input semantic="POSITION" source="#mesh1-geometry-position"/>
+            </vertices>
+            <lines material="material_0_0" count="4">
+               <input semantic="VERTEX" source="#mesh1-geometry-vertex" offset="0"/>
+               <p>0 1 1 2 2 3 3 4 </p>
+            </lines>
+         </mesh>
+      </geometry>
+   </library_geometries>
+   <library_cameras>
+      <camera id="Camera-camera" name="Camera-camera">
+         <optics>
+            <technique_common>
+               <perspective>
+                  <xfov>46.666667</xfov>
+                  <yfov>35.000000</yfov>
+                  <znear>0.025400</znear>
+                  <zfar>25.400000</zfar>
+               </perspective>
+            </technique_common>
+         </optics>
+      </camera>
+   </library_cameras>
+   <library_visual_scenes>
+      <visual_scene id="SketchUpScene" name="SketchUpScene">
+         <node id="Model" name="Model">
+            <node id="mesh1" name="mesh1">
+               <instance_geometry url="#mesh1-geometry">
+                  <bind_material>
+                     <technique_common>
+                        <instance_material symbol="material_0_0" target="#material_0_0ID"/>
+                     </technique_common>
+                  </bind_material>
+               </instance_geometry>
+            </node>
+         </node>
+         <node id="Camera" name="Camera">
+            <matrix>
+               0.832030 -0.105834 0.544542 224.807795
+               0.554731 0.158739 -0.816747 -308.089542
+               -0.000000 0.981632 0.190785 76.818702
+               0.000000 0.000000 0.000000 1.000000
+            </matrix>
+            <instance_camera url="#Camera-camera"/>
+         </node>
+      </visual_scene>
+   </library_visual_scenes>
+   <scene>
+      <instance_visual_scene url="#SketchUpScene"/>
+   </scene>
+</COLLADA>
